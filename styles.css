@@ -1,0 +1,19 @@
+body {
+    font-family: Arial, Sans-Serif;
+    background-color:#F0F0F0; /* background-color */
+    color: #333; /* Text color */
+}
+
+header {
+    background-color: #4CAF50; /* Header color */
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+}
