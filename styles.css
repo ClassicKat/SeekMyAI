@@ -1,0 +1,214 @@
+body, header {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: transparent;
+    width: 100%;
+    height: 1in;
+    position: relative;
+}
+
+@font-face {
+    font-family: 'Nasalization';
+    src: url('https://raw.githubusercontent.com/ClassicKat/SeekMyAI/97baf68db6834324cfd790076956bc33f3bf4a93/nasalization-rg.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+header h1 {
+    font-family: 'Nasalization', sans-serif;
+    font-weight: normal;
+    color: #969595;
+    font-size: 24pt;
+    position: absolute;
+    left: 1.4in;
+    top: 50%;
+    transform: translateY(-50%);
+    line-height: 1;
+    margin: 0;
+}
+
+body {
+    position: relative;
+    height: 200vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #888 #f1f1f1;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #A9A9A9, #EBEBEB, #2F4F4F);
+    z-index: -1;
+    filter: brightness(0.1);
+}
+
+.menu-toggle {
+    position: absolute;
+    left: 12mm;
+    top: 10.4mm;
+    cursor: pointer;
+    z-index: 1000;
+    width: 24pt;
+    height: 16pt;
+    stroke: #FFFFFF; 
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background-color: #333232;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 1001;
+    filter: brightness(0.7);
+}
+
+.sidebar.open {
+    transform: translateX(0);
+}
+
+.menu-item {
+    color: #D3D3D3;
+    font-size: 12pt;
+    padding: 8mm 10mm;
+    height: 12mm;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    box-sizing: border-box;
+}
+
+.divider {
+    height: 0.5px;
+    background-color: #D3D3D3;
+    margin: 0;
+}
+
+.menu-item.special {
+    height: 25mm;
+}
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.0);
+    display: none;
+    z-index: 999;
+}
+
+.toggle-container {
+    display: none;
+    position: absolute;
+    left: 3mm;
+    bottom: 3mm;
+}
+
+.sidebar.open .toggle-container {
+    display: flex;
+}
+
+.toggle {
+    width: 1.5cm;
+    height: 0.7cm;
+    background-color: #ED7117; 
+    border: 2px solid #D3D3D3; 
+    border-radius: 50px;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.toggle-circle {
+    width: 0.6cm;
+    height: 0.6cm;
+    background-color: #FFFFFF; 
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 2px;
+    transform: translateY(-50%);
+    transition: all 0.3s ease;
+}
+
+.toggle.active .toggle-circle {
+    left: calc(100% - 0.6cm - 2px);
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 50px;
+}
+
+body.light-mode {
+    background-color: #FFFFFF;
+    color: #333;
+}
+
+header.light-mode h1 {
+    color: #202124;
+}
+
+body.light-mode::before {
+    background: radial-gradient(circle at bottom, #FF6600, #FF9D5C, #BBBBBB, #FFFFFF);
+    filter: brightness(1);
+}
+
+.sidebar.light-mode {
+    background-color: #AAAAAA;
+    filter: brightness(1);
+}
+
+.menu-item.light-mode {
+    color: #444444;
+}
+
+.divider.light-mode {
+    background-color: #656565;
+}
+
+.menu-toggle.light-mode svg g {
+    stroke: #424242;
+}
+
+.toggle.light-mode {
+    background-color: #000000;
+    border: 2px solid #808080;
+}
+
+.toggle-circle.light-mode {
+    background-color: #FFFFFF;
+    right: calc(100% - 0.6cm - 2px);
+}
+
+body.light-mode .menu-toggle {
+    stroke: #424242;
+}
